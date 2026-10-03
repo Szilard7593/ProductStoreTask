@@ -107,9 +107,10 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
       <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>GlobalVariablesT1PNoYwrqg</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PerformLogin" sap:VirtualizedContainerService.HintSize="1456,3074" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PerformLogin" sap:VirtualizedContainerService.HintSize="1456,2838" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="inputUser" />
       <Variable x:TypeArguments="x:String" Name="retrievedUsername" />
@@ -125,29 +126,29 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <p:GetSecureCredential CredentialType="Generic" DisplayName="Get Secure Credentials" sap:VirtualizedContainerService.HintSize="1456,123" sap2010:WorkflowViewState.IdRef="GetSecureCredential_1" Password="[retrievedPassword]" PersistanceType="Enterprise" Target="demoBlaze" Username="[retrievedUsername]" />
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1456,2928" sap2010:WorkflowViewState.IdRef="OpenBrowser_3" NewSession="False" Url="https://www.demoblaze.com/index.html#">
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1456,2692" sap2010:WorkflowViewState.IdRef="OpenBrowser_3" NewSession="False" Url="https://www.demoblaze.com/index.html#">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1422,2779" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1422,2543" sap2010:WorkflowViewState.IdRef="Sequence_15">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1388,2553" sap2010:WorkflowViewState.IdRef="RetryScope_2">
+            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1388,2317" sap2010:WorkflowViewState.IdRef="RetryScope_2">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1346,2229" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1346,1993" sap2010:WorkflowViewState.IdRef="Sequence_29">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Pick sap:VirtualizedContainerService.HintSize="1312,2169" sap2010:WorkflowViewState.IdRef="Pick_1">
-                      <PickBranch DisplayName="Fail" sap:VirtualizedContainerService.HintSize="660,2099" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+                    <Pick sap:VirtualizedContainerService.HintSize="1312,1933" sap2010:WorkflowViewState.IdRef="Pick_1">
+                      <PickBranch DisplayName="Fail" sap:VirtualizedContainerService.HintSize="660,1863" sap2010:WorkflowViewState.IdRef="PickBranch_1">
                         <PickBranch.Trigger>
                           <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'A  nameofuser'" sap:VirtualizedContainerService.HintSize="570,107" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
                             <ui:WaitUiElementAppear.Target>
@@ -159,13 +160,13 @@
                             </ui:WaitUiElementAppear.Target>
                           </ui:WaitUiElementAppear>
                         </PickBranch.Trigger>
-                        <Sequence sap:VirtualizedContainerService.HintSize="570,1791" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                        <Sequence sap:VirtualizedContainerService.HintSize="570,1555" sap2010:WorkflowViewState.IdRef="Sequence_30">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence sap:VirtualizedContainerService.HintSize="536,1731" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                          <Sequence sap:VirtualizedContainerService.HintSize="536,1495" sap2010:WorkflowViewState.IdRef="Sequence_23">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -194,9 +195,9 @@
                                 <InArgument x:TypeArguments="x:String">[loggedInUsername.Replace("Welcome","").Trim()]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <If Condition="[retrievedUsername.CompareTo(loggedInUsername) &lt;&gt; 0]" sap:VirtualizedContainerService.HintSize="502,1394" sap2010:WorkflowViewState.IdRef="If_5">
+                            <If Condition="[retrievedUsername.CompareTo(loggedInUsername) &lt;&gt; 0]" sap:VirtualizedContainerService.HintSize="502,1158" sap2010:WorkflowViewState.IdRef="If_5">
                               <If.Then>
-                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,773" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,655" sap2010:WorkflowViewState.IdRef="Sequence_19">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -226,7 +227,7 @@
                                     </ui:Click.Target>
                                   </ui:Click>
                                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;The previous user was logged out&quot;]" />
-                                  <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_8">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:Boolean">[logIn]</OutArgument>
                                     </Assign.To>
@@ -234,18 +235,17 @@
                                       <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="434,109" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;After log&quot;]" />
                                 </Sequence>
                               </If.Then>
                               <If.Else>
-                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,459" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,341" sap2010:WorkflowViewState.IdRef="Sequence_20">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;The correct user was logged in&quot;]" />
-                                  <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_9">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:Boolean">[logIn]</OutArgument>
                                     </Assign.To>
@@ -253,14 +253,13 @@
                                       <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="434,109" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;Log suuc&quot;]" />
                                 </Sequence>
                               </If.Else>
                             </If>
                           </Sequence>
                         </Sequence>
                       </PickBranch>
-                      <PickBranch sap:VirtualizedContainerService.HintSize="558,2099" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+                      <PickBranch sap:VirtualizedContainerService.HintSize="558,1863" sap2010:WorkflowViewState.IdRef="PickBranch_2">
                         <PickBranch.Trigger>
                           <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'A  login2'" sap:VirtualizedContainerService.HintSize="468,107" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
                             <ui:WaitUiElementAppear.Target>
