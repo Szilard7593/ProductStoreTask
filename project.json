@@ -36,6 +36,7 @@
   },
   "designOptions": {
     "projectProfile": "Developement",
+"modernBehavior": false,
     "outputType": "Process",
     "libraryOptions": {
       "includeOriginalXaml": false,
