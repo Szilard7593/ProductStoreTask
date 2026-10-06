@@ -89,10 +89,11 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="780,603" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="806,545" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Browser" Name="browser_pass" />
       <Variable x:TypeArguments="x:String" Name="io_targetIten" />
+      <Variable x:TypeArguments="x:Int32" Name="out_targetPrice" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -109,13 +110,14 @@
         <InArgument x:TypeArguments="ui:Browser" x:Key="in_browser">[browser_pass]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ScrapeProductsTable - Invoke Workflow File (ScrapeProductsTable.xaml)" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ScrapeProductsTable.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ScrapeProductsTable - Invoke Workflow File (ScrapeProductsTable.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ScrapeProductsTable.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_brand">[brand]</InArgument>
         <InArgument x:TypeArguments="x:Int32" x:Key="in_minPrice">[min]</InArgument>
         <InArgument x:TypeArguments="x:Int32" x:Key="in_maxPrice">[max]</InArgument>
         <InArgument x:TypeArguments="ui:Browser" x:Key="in_browser">[browser_pass]</InArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="out_targetItem">[io_targetIten]</OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="out_targetPrice">[out_targetPrice]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>

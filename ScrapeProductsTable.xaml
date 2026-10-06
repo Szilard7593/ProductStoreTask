@@ -5,6 +5,7 @@
     <x:Property Name="in_minPrice" Type="InArgument(x:Int32)" />
     <x:Property Name="in_maxPrice" Type="InArgument(x:Int32)" />
     <x:Property Name="out_targetItem" Type="OutArgument(x:String)" />
+    <x:Property Name="out_targetPrice" Type="OutArgument(x:Int32)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -120,7 +121,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ScrapeProductsTable" sap:VirtualizedContainerService.HintSize="780,2029" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ScrapeProductsTable" sap:VirtualizedContainerService.HintSize="744,2144" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="targetItemName" />
     </Sequence.Variables>
@@ -167,13 +168,13 @@
         </ActivityAction>
       </ui:BrowserScope.Body>
     </ui:BrowserScope>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge STORE(2)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="638,1637" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="ff9d088a-ba79-4f8b-bd7f-efb5aac1658d" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge STORE(2)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="638,1752" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="ff9d088a-ba79-4f8b-bd7f-efb5aac1658d" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="604,1430" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="604,1545" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd2:DataTable" Name="dt_All" />
               <Variable x:TypeArguments="sd2:DataTable" Name="dt_filtered" />
@@ -236,7 +237,7 @@
                         <InArgument x:TypeArguments="x:Int32">[CInt(CurrentRow("price").ToString.Replace("$","").Trim)]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <If Condition="[currentPrice &gt;= in_MinPrice And currentPrice &lt;= in_MaxPrice And currentPrice &gt; maxPrice]" sap:VirtualizedContainerService.HintSize="502,533" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If Condition="[currentPrice &gt;= in_MinPrice And currentPrice &lt;= in_MaxPrice And currentPrice &gt; out_targetPrice]" sap:VirtualizedContainerService.HintSize="502,533" sap2010:WorkflowViewState.IdRef="If_1">
                       <If.Then>
                         <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,281" sap2010:WorkflowViewState.IdRef="Sequence_12">
                           <sap:WorkflowViewStateService.ViewState>
@@ -276,6 +277,14 @@
                 </ActivityAction>
               </ui:ForEachRow.Body>
             </ui:ForEachRow>
+            <Assign sap:VirtualizedContainerService.HintSize="570,115" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[out_targetPrice]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[maxPrice]</InArgument>
+              </Assign.Value>
+            </Assign>
             <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  index.html'" sap:VirtualizedContainerService.HintSize="570,130" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
