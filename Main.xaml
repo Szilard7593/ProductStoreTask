@@ -89,7 +89,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="806,720" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="806,971" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Browser" Name="browser_pass" />
       <Variable x:TypeArguments="x:String" Name="io_targetIten" />
@@ -118,6 +118,11 @@
         <InArgument x:TypeArguments="ui:Browser" x:Key="in_browser">[browser_pass]</InArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="out_targetItem">[io_targetIten]</OutArgument>
         <OutArgument x:TypeArguments="x:Int32" x:Key="out_targetPrice">[out_targetPrice]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AddToCart - Invoke Workflow File (AddToCart.xaml)" sap:VirtualizedContainerService.HintSize="416,251" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="AddToCart.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Everything went ok&quot;]" />
