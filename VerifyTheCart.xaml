@@ -85,7 +85,7 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="VerifyTheCart" sap:VirtualizedContainerService.HintSize="806,2618.9999999999995" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="VerifyTheCart" sap:VirtualizedContainerService.HintSize="805.9999999999999,2618.9999999999995" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="bool_ItemExists" />
     </Sequence.Variables>
@@ -94,7 +94,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_browser]" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe STORE'" sap:VirtualizedContainerService.HintSize="586,2596" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="241f251b610e74c47bc12c71490f270a" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe STORE'" sap:VirtualizedContainerService.HintSize="586,2596" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="241f251b610e74c47bc12c71490f270a" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -107,7 +107,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Navigating to the cart&quot;]" />
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="400" DisplayName="Click 'A  cartur'" sap:VirtualizedContainerService.HintSize="518,139" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DelayBefore="300" DelayMS="400" DisplayName="Click 'A  cartur'" sap:VirtualizedContainerService.HintSize="518,139" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -119,13 +119,10 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b5bf00c-f056-47f4-a8dc-c74c9fb5250e" InformativeScreenshot="ab0af3bd68503762d58a4cda8e3e009c" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;&lt;webctrl id='cartur' tag='A' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b5bf00c-f056-47f4-a8dc-c74c9fb5250e" InformativeScreenshot="ab0af3bd68503762d58a4cda8e3e009c" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;&lt;webctrl id='cartur' tag='A' /&gt;" WaitForReady="COMPLETE">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>

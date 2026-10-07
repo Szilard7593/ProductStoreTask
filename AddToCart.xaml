@@ -3,7 +3,6 @@
     <x:Property Name="in_browser" Type="InArgument(ui:Browser)" />
     <x:Property Name="in_targetItem" Type="InArgument(x:String)" />
     <x:Property Name="in_targetPrice" Type="InArgument(x:Int32)" />
-    <x:Property Name="in_description" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -106,18 +105,13 @@
   <Sequence DisplayName="AddToCart" sap:VirtualizedContainerService.HintSize="806,2041" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="bool_itemFound" />
-      <Variable x:TypeArguments="x:String" Name="targetItem">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">Nokia lumia 1520</Literal>
-        </Variable.Default>
-      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_browser]" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe  STORE'" sap:VirtualizedContainerService.HintSize="638,2018" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="8825be9124736784da11010da8320786" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe  STORE'" sap:VirtualizedContainerService.HintSize="638,2018" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="8825be9124736784da11010da8320786" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -134,25 +128,6 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  index.html'" sap:VirtualizedContainerService.HintSize="570,139" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
-              <ui:Click.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:Click.CursorPosition>
-              <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="12c8a418-1923-4753-9359-0be8816fb304" InformativeScreenshot="17c1e03cbc30e4a6d2730bd0304c7176" Selector="&lt;webctrl parentid='navbarExample' tag='A' /&gt;" WaitForReady="COMPLETE">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                </ui:Target>
-              </ui:Click.Target>
-            </ui:Click>
             <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="570,963" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
               <ui:InterruptibleDoWhile.Body>
                 <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="536,816" sap2010:WorkflowViewState.IdRef="Sequence_3">
@@ -163,7 +138,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:UiElementExists DisplayName="Element Exists" Exists="[bool_itemFound]" sap:VirtualizedContainerService.HintSize="502,119" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
                     <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="34435f57-e9a1-4fbe-97ab-28e0465d1cc2" Selector="[string.Format(&quot;&lt;webctrl tag='A' visibleinnertext='{0}' /&gt;&quot;, targetItem)]" TimeoutMS="300" WaitForReady="COMPLETE" />
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="34435f57-e9a1-4fbe-97ab-28e0465d1cc2" Selector="[string.Format(&quot;&lt;webctrl tag='A' visibleinnertext='{0}' /&gt;&quot;, in_targetItem)]" TimeoutMS="300" WaitForReady="COMPLETE" />
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
                   <If Condition="[Not bool_itemFound]" sap:VirtualizedContainerService.HintSize="502,637" sap2010:WorkflowViewState.IdRef="If_2">
@@ -214,7 +189,7 @@
                             </ui:CursorPosition>
                           </ui:Click.CursorPosition>
                           <ui:Click.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6a6ea38b-1f21-4e71-bb26-2bcb87528944" Selector="[string.Format(&quot;&lt;webctrl tag='A' class='hrefch' parentid='tbodyid' visibleinnertext='{0}' /&gt;&quot;, targetItem)]">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6a6ea38b-1f21-4e71-bb26-2bcb87528944" Selector="[string.Format(&quot;&lt;webctrl tag='A' class='hrefch' parentid='tbodyid' visibleinnertext='{0}' /&gt;&quot;, in_targetItem)]">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
@@ -305,7 +280,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  OK'" sap:VirtualizedContainerService.HintSize="570,130" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  OK'" sap:VirtualizedContainerService.HintSize="570,139" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -317,7 +292,25 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="843044f6-36dc-4e01-9d25-04aa988e28f3" InformativeScreenshot="198cb305f9286a9006124773a604ce03" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='STORE and 2 more pages - Personal - Microsoft​ Edge' /&gt;&lt;ctrl name='www.demoblaze.com says' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" TimeoutMS="2000">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="843044f6-36dc-4e01-9d25-04aa988e28f3" InformativeScreenshot="198cb305f9286a9006124773a604ce03" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='STORE and 2 more pages - Personal - Microsoft​ Edge' /&gt;&lt;ctrl name='www.demoblaze.com says' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" TimeoutMS="2000" WaitForReady="COMPLETE" />
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  cartur'" sap:VirtualizedContainerService.HintSize="570,130" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3733fbe9-e66c-4a07-9f71-d5c8317b2672" InformativeScreenshot="bdb939e9741558983069fefb694e43bc" Selector="&lt;webctrl id='cartur' tag='A' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
                   <ui:Target.WaitForReady>
                     <InArgument x:TypeArguments="ui:WaitForReady" />
                   </ui:Target.WaitForReady>

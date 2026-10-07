@@ -116,7 +116,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PerformLogin" sap:VirtualizedContainerService.HintSize="1482,2784" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PerformLogin" sap:VirtualizedContainerService.HintSize="1448,2783.9999999999995" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="inputUser" />
       <Variable x:TypeArguments="x:String" Name="retrievedUsername" />
@@ -131,20 +131,20 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <p:GetSecureCredential CredentialType="Generic" DisplayName="Get Secure Credentials" sap:VirtualizedContainerService.HintSize="1482,123" sap2010:WorkflowViewState.IdRef="GetSecureCredential_1" Password="[retrievedPassword]" PersistanceType="Enterprise" Target="demoBlaze" Username="[retrievedUsername]" />
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" Private="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1482,2638" sap2010:WorkflowViewState.IdRef="OpenBrowser_3" NewSession="False" UiBrowser="[out_browser]" Url="https://www.demoblaze.com/index.html#">
+    <p:GetSecureCredential CredentialType="Generic" DisplayName="Get Secure Credentials" sap:VirtualizedContainerService.HintSize="1448,123" sap2010:WorkflowViewState.IdRef="GetSecureCredential_1" Password="[retrievedPassword]" PersistanceType="Enterprise" Target="demoBlaze" Username="[retrievedUsername]" />
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" Private="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1448,2638" sap2010:WorkflowViewState.IdRef="OpenBrowser_3" NewSession="False" UiBrowser="[out_browser]" Url="https://www.demoblaze.com/index.html#">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1448,2489" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1414,2489" sap2010:WorkflowViewState.IdRef="Sequence_15">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="1380,2231" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="1380,2263" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1346,2116" sap2010:WorkflowViewState.IdRef="Sequence_32">
                   <sap:WorkflowViewStateService.ViewState>
@@ -180,13 +180,10 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'A  nameofuser'" sap:VirtualizedContainerService.HintSize="502,139" sap2010:WorkflowViewState.IdRef="GetValue_12">
                             <ui:GetValue.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8590fa43-60be-4068-96aa-861e21a93d08" InformativeScreenshot="59c1b77bc81d7d82837072bf15e4910e" Selector="&lt;webctrl id='logout2' tag='A' /&gt;&lt;nav up='2' /&gt;&lt;webctrl id='nameofuser' tag='A' /&gt;">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8590fa43-60be-4068-96aa-861e21a93d08" InformativeScreenshot="59c1b77bc81d7d82837072bf15e4910e" Selector="&lt;webctrl id='logout2' tag='A' /&gt;&lt;nav up='2' /&gt;&lt;webctrl id='nameofuser' tag='A' /&gt;" WaitForReady="COMPLETE">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
                               </ui:Target>
                             </ui:GetValue.Target>
                             <ui:GetValue.Value>
@@ -222,13 +219,10 @@
                                     </ui:CursorPosition>
                                   </ui:Click.CursorPosition>
                                   <ui:Click.Target>
-                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="41f9d8c0-0f92-462a-accd-eb149704a1d9" InformativeScreenshot="7b146d74a3ee90885b744696f4790f3a" Selector="&lt;webctrl id='nameofuser' tag='A' /&gt;&lt;nav up='2' /&gt;&lt;webctrl id='logout2' tag='A' /&gt;">
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="41f9d8c0-0f92-462a-accd-eb149704a1d9" InformativeScreenshot="7b146d74a3ee90885b744696f4790f3a" Selector="&lt;webctrl id='nameofuser' tag='A' /&gt;&lt;nav up='2' /&gt;&lt;webctrl id='logout2' tag='A' /&gt;" WaitForReady="COMPLETE">
                                       <ui:Target.TimeoutMS>
                                         <InArgument x:TypeArguments="x:Int32" />
                                       </ui:Target.TimeoutMS>
-                                      <ui:Target.WaitForReady>
-                                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                                      </ui:Target.WaitForReady>
                                     </ui:Target>
                                   </ui:Click.Target>
                                 </ui:Click>
@@ -268,13 +262,10 @@
                         <PickBranch.Trigger>
                           <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'A  login2'" sap:VirtualizedContainerService.HintSize="468,107" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                             <ui:UiElementExists.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1f65fa0a-1d0d-4acc-85d7-224f2c25a8ff" InformativeScreenshot="c620524a0491fe71748608e418a5fd2b" Selector="&lt;webctrl id='login2' tag='A' aaname='Log in' visibleinnertext='Log in' /&gt;">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1f65fa0a-1d0d-4acc-85d7-224f2c25a8ff" InformativeScreenshot="c620524a0491fe71748608e418a5fd2b" Selector="&lt;webctrl id='login2' tag='A' aaname='Log in' visibleinnertext='Log in' /&gt;" WaitForReady="COMPLETE">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
                               </ui:Target>
                             </ui:UiElementExists.Target>
                           </ui:UiElementExists>
@@ -309,25 +300,19 @@
                           </ui:Click>
                           <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  loginusername'" EmptyField="True" sap:VirtualizedContainerService.HintSize="434,188" sap2010:WorkflowViewState.IdRef="TypeInto_6" SimulateType="True" Text="[retrievedUsername]">
                             <ui:TypeInto.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="48d24ead-e4d3-4bc8-b055-fb48ea3cae6b" InformativeScreenshot="f5e6287da603bff49c4b3c1c38621f9a" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;&lt;webctrl id='loginusername' tag='INPUT' /&gt;">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="48d24ead-e4d3-4bc8-b055-fb48ea3cae6b" InformativeScreenshot="f5e6287da603bff49c4b3c1c38621f9a" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;&lt;webctrl id='loginusername' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
                               </ui:Target>
                             </ui:TypeInto.Target>
                           </ui:TypeInto>
                           <ui:TypeSecureText AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Secure Text 'INPUT  loginpassword'" EmptyField="True" sap:VirtualizedContainerService.HintSize="434,139" sap2010:WorkflowViewState.IdRef="TypeSecureText_5" SecureText="[retrievedPassword]" SimulateType="True">
                             <ui:TypeSecureText.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b8d42dc4-f131-4c09-b8d7-fcfa1c6f8427" InformativeScreenshot="b0f06b96a3f986904ef823ad1aa9245a" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;&lt;webctrl id='loginpassword' tag='INPUT' /&gt;">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b8d42dc4-f131-4c09-b8d7-fcfa1c6f8427" InformativeScreenshot="b0f06b96a3f986904ef823ad1aa9245a" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;&lt;webctrl id='loginpassword' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
                               </ui:Target>
                             </ui:TypeSecureText.Target>
                           </ui:TypeSecureText>
@@ -343,25 +328,19 @@
                               </ui:CursorPosition>
                             </ui:Click.CursorPosition>
                             <ui:Click.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="df4c70e7-3a06-47b9-8c34-bc91ab37024d" InformativeScreenshot="2fb77433713a95f3aecd45dd4ad5055a" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;&lt;webctrl aaname='Log in' parentid='logInModal' tag='BUTTON' /&gt;">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="df4c70e7-3a06-47b9-8c34-bc91ab37024d" InformativeScreenshot="2fb77433713a95f3aecd45dd4ad5055a" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;&lt;webctrl aaname='Log in' parentid='logInModal' tag='BUTTON' /&gt;" WaitForReady="COMPLETE">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
                               </ui:Target>
                             </ui:Click.Target>
                           </ui:Click>
                           <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'A  nameofuser'" sap:VirtualizedContainerService.HintSize="434,139" sap2010:WorkflowViewState.IdRef="GetValue_11">
                             <ui:GetValue.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8590fa43-60be-4068-96aa-861e21a93d08" InformativeScreenshot="59c1b77bc81d7d82837072bf15e4910e" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;&lt;webctrl id='nameofuser' tag='A' /&gt;">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8590fa43-60be-4068-96aa-861e21a93d08" InformativeScreenshot="59c1b77bc81d7d82837072bf15e4910e" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;&lt;webctrl id='nameofuser' tag='A' /&gt;" WaitForReady="COMPLETE">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
                               </ui:Target>
                             </ui:GetValue.Target>
                             <ui:GetValue.Value>
@@ -386,7 +365,7 @@
                 <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="logIn &lt;&gt; True" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1414,166" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;user was logged in succesfully&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1380,166" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;user was logged in succesfully&quot;]" />
           </Sequence>
         </ActivityAction>
       </ui:OpenBrowser.Body>
