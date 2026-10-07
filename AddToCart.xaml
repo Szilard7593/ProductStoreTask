@@ -108,7 +108,7 @@
       <Variable x:TypeArguments="x:Boolean" Name="bool_itemFound" />
       <Variable x:TypeArguments="x:String" Name="targetItem">
         <Variable.Default>
-          <Literal x:TypeArguments="x:String">Nokia Lumia 1520</Literal>
+          <Literal x:TypeArguments="x:String">Nokia lumia 1520</Literal>
         </Variable.Default>
       </Variable>
     </Sequence.Variables>
@@ -214,7 +214,7 @@
                             </ui:CursorPosition>
                           </ui:Click.CursorPosition>
                           <ui:Click.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6a6ea38b-1f21-4e71-bb26-2bcb87528944" Selector="[string.Format(&quot;&lt;webctrl tag='A' class='hrefch' parentid='tbodyid' innertext='{0}' /&gt;&quot;, targetItem)]">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6a6ea38b-1f21-4e71-bb26-2bcb87528944" Selector="[string.Format(&quot;&lt;webctrl tag='A' class='hrefch' parentid='tbodyid' visibleinnertext='{0}' /&gt;&quot;, targetItem)]">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
