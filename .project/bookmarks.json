@@ -1,15 +1,3 @@
 {
-  "Value": {
-    "ScrapeProductsTable.xaml": [
-      {
-        "IsEnabled": true,
-        "Annotation": null,
-        "Id": "fd002e56-fcc8-423f-af30-049c21b96638",
-        "ActivityIdRef": "FilterDataTable_1",
-        "ActivityId": "1.165",
-        "ActivityName": "Filter Data Table",
-        "IsTransient": false
-      }
-    ]
-  }
+  "Value": {}
 }

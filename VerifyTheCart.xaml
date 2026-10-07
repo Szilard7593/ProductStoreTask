@@ -85,7 +85,7 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="VerifyTheCart" sap:VirtualizedContainerService.HintSize="780,2742" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="VerifyTheCart" sap:VirtualizedContainerService.HintSize="806,2742" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="bool_ItemExists" />
     </Sequence.Variables>
@@ -94,7 +94,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe STORE'" sap:VirtualizedContainerService.HintSize="586,2719" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="241f251b610e74c47bc12c71490f270a" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;" UiBrowser="[in_browser]">
+    <ui:BrowserScope SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_browser]" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe STORE'" sap:VirtualizedContainerService.HintSize="586,2719" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="241f251b610e74c47bc12c71490f270a" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
