@@ -144,7 +144,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:UiElementExists DisplayName="Element Exists" Exists="[bool_itemFound]" sap:VirtualizedContainerService.HintSize="450,119" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                     <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1a668c99-710b-43dd-8142-42d7d400fa39" Selector="&lt;webctrl aaname='{{in_TargetName}}' tag='A' /&gt;">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1a668c99-710b-43dd-8142-42d7d400fa39" Selector="&lt;webctrl aaname='{{in_TargetItem}}' tag='A' /&gt;">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
