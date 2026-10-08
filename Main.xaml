@@ -1,8 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.brand="Samsung" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.brand="MacBook" this:Main.min="800" this:Main.max="1800" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="brand" Type="InArgument(x:String)" />
     <x:Property Name="min" Type="InArgument(x:Int32)" />
     <x:Property Name="max" Type="InArgument(x:Int32)" />
+    <x:Property Name="fountItem" Type="InArgument(x:String)" />
+    <x:Property Name="fountPrice" Type="InArgument(x:Int32)" />
+    <x:Property Name="foundDescription" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -94,8 +97,6 @@
       <Variable x:TypeArguments="ui:Browser" Name="browser_pass" />
       <Variable x:TypeArguments="x:String" Name="io_targetIten" />
       <Variable x:TypeArguments="x:Int32" Name="out_targetPrice" />
-      <Variable x:TypeArguments="x:String" Name="fountItem" />
-      <Variable x:TypeArguments="x:Int32" Name="fountPrice" />
       <Variable x:TypeArguments="x:String" Name="foundDescription" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -115,12 +116,13 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ScrapeProductsTable - Invoke Workflow File (ScrapeProductsTable.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ScrapeProductsTable.xaml">
       <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="ui:Browser" x:Key="in_browser">[browser_pass]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_brand">[brand]</InArgument>
         <InArgument x:TypeArguments="x:Int32" x:Key="in_minPrice">[min]</InArgument>
         <InArgument x:TypeArguments="x:Int32" x:Key="in_maxPrice">[max]</InArgument>
-        <InArgument x:TypeArguments="ui:Browser" x:Key="in_browser">[browser_pass]</InArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="out_targetItem">[fountItem]</OutArgument>
         <OutArgument x:TypeArguments="x:Int32" x:Key="out_targetPrice">[fountPrice]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_targetDescription">[foundDescription]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AddToCart - Invoke Workflow File (AddToCart.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="AddToCart.xaml">
@@ -128,6 +130,7 @@
         <InArgument x:TypeArguments="ui:Browser" x:Key="in_browser">[browser_pass]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_targetItem">[fountItem]</InArgument>
         <InArgument x:TypeArguments="x:Int32" x:Key="in_targetPrice">[fountPrice]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_targetDescription">[foundDescription]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Everything went ok&quot;]" />

@@ -50,6 +50,7 @@
       <x:String>UiPath.Activities.Contracts</x:String>
       <x:String>System.Numerics</x:String>
       <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>UiPath.Shared.Telemetry</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -116,7 +117,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PerformLogin" sap:VirtualizedContainerService.HintSize="1448,2783.9999999999995" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PerformLogin" sap:VirtualizedContainerService.HintSize="1448,3086" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="inputUser" />
       <Variable x:TypeArguments="x:String" Name="retrievedUsername" />
@@ -132,45 +133,55 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <p:GetSecureCredential CredentialType="Generic" DisplayName="Get Secure Credentials" sap:VirtualizedContainerService.HintSize="1448,123" sap2010:WorkflowViewState.IdRef="GetSecureCredential_1" Password="[retrievedPassword]" PersistanceType="Enterprise" Target="demoBlaze" Username="[retrievedUsername]" />
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" Private="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1448,2638" sap2010:WorkflowViewState.IdRef="OpenBrowser_3" NewSession="False" UiBrowser="[out_browser]" Url="https://www.demoblaze.com/index.html#">
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" Private="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1448,2940" sap2010:WorkflowViewState.IdRef="OpenBrowser_3" NewSession="False" UiBrowser="[out_browser]" Url="https://www.demoblaze.com/index.html#">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1414,2489" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1414,2791" sap2010:WorkflowViewState.IdRef="Sequence_15">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="1380,2263" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="1380,2565" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
               <ui:InterruptibleWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1346,2116" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1346,2418" sap2010:WorkflowViewState.IdRef="Sequence_32">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="1312,123" sap2010:WorkflowViewState.IdRef="Delay_3" />
-                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1312,1933" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1312,2235" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:Boolean" Name="bool_userLogged" />
+                      <Variable x:TypeArguments="x:Boolean" Name="bool_userNotLogged" />
+                    </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Pick sap:VirtualizedContainerService.HintSize="1278,1850" sap2010:WorkflowViewState.IdRef="Pick_2">
-                      <PickBranch DisplayName="Fail" sap:VirtualizedContainerService.HintSize="626,1780" sap2010:WorkflowViewState.IdRef="PickBranch_4">
+                    <ui:UiElementExists DisplayName="Element Exists 'A  nameofuser'" Exists="[bool_userLogged]" sap:VirtualizedContainerService.HintSize="1278,139" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                      <ui:UiElementExists.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="729fc42e-5f36-42cd-b5ee-9692dcc095d3" InformativeScreenshot="59c1b77bc81d7d82837072bf15e4910e" Selector="&lt;webctrl id='nameofuser' tag='A' visibleinnertext='Welcome *' /&gt;" WaitForReady="COMPLETE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:UiElementExists.Target>
+                    </ui:UiElementExists>
+                    <ui:UiElementExists DisplayName="Element Exists 'A  login2'" Exists="[bool_userNotLogged]" sap:VirtualizedContainerService.HintSize="1278,139" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                      <ui:UiElementExists.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1f65fa0a-1d0d-4acc-85d7-224f2c25a8ff" InformativeScreenshot="c620524a0491fe71748608e418a5fd2b" Selector="&lt;webctrl id='login2' tag='A' aaname='Log in' visibleinnertext='Log in' /&gt;" TimeoutMS="300" WaitForReady="COMPLETE" />
+                      </ui:UiElementExists.Target>
+                    </ui:UiElementExists>
+                    <Pick sap:VirtualizedContainerService.HintSize="1278,1874" sap2010:WorkflowViewState.IdRef="Pick_2">
+                      <PickBranch DisplayName="Fail" sap:VirtualizedContainerService.HintSize="626,1804" sap2010:WorkflowViewState.IdRef="PickBranch_4">
                         <PickBranch.Trigger>
-                          <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'A  nameofuser'" sap:VirtualizedContainerService.HintSize="536,107" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
-                            <ui:UiElementExists.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="729fc42e-5f36-42cd-b5ee-9692dcc095d3" InformativeScreenshot="59c1b77bc81d7d82837072bf15e4910e" Selector="&lt;webctrl id='nameofuser' tag='A' visibleinnertext='Welcome *' /&gt;" WaitForReady="COMPLETE">
-                                <ui:Target.TimeoutMS>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:Target.TimeoutMS>
-                              </ui:Target>
-                            </ui:UiElementExists.Target>
-                          </ui:UiElementExists>
+                          <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="Check True" Expression="[bool_userLogged]" sap:VirtualizedContainerService.HintSize="536,131" sap2010:WorkflowViewState.IdRef="CheckTrue_1" />
                         </PickBranch.Trigger>
                         <Sequence sap:VirtualizedContainerService.HintSize="536,1472" sap2010:WorkflowViewState.IdRef="Sequence_39">
                           <sap:WorkflowViewStateService.ViewState>
@@ -258,17 +269,9 @@
                           </If>
                         </Sequence>
                       </PickBranch>
-                      <PickBranch sap:VirtualizedContainerService.HintSize="558,1780" sap2010:WorkflowViewState.IdRef="PickBranch_5">
+                      <PickBranch sap:VirtualizedContainerService.HintSize="558,1804" sap2010:WorkflowViewState.IdRef="PickBranch_5">
                         <PickBranch.Trigger>
-                          <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'A  login2'" sap:VirtualizedContainerService.HintSize="468,107" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
-                            <ui:UiElementExists.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1f65fa0a-1d0d-4acc-85d7-224f2c25a8ff" InformativeScreenshot="c620524a0491fe71748608e418a5fd2b" Selector="&lt;webctrl id='login2' tag='A' aaname='Log in' visibleinnertext='Log in' /&gt;" WaitForReady="COMPLETE">
-                                <ui:Target.TimeoutMS>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:Target.TimeoutMS>
-                              </ui:Target>
-                            </ui:UiElementExists.Target>
-                          </ui:UiElementExists>
+                          <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="Check True" Expression="[bool_userNotLogged]" sap:VirtualizedContainerService.HintSize="468,131" sap2010:WorkflowViewState.IdRef="CheckTrue_2" />
                         </PickBranch.Trigger>
                         <Sequence sap:VirtualizedContainerService.HintSize="468,910" sap2010:WorkflowViewState.IdRef="Sequence_38">
                           <sap:WorkflowViewStateService.ViewState>

@@ -38,6 +38,7 @@
       <x:String>System.Reflection</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Shared.Telemetry</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -83,9 +84,10 @@
       <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Credentials.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="VerifyTheCart" sap:VirtualizedContainerService.HintSize="806,2619" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="VerifyTheCart" sap:VirtualizedContainerService.HintSize="806,3067" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="bool_ItemExists" />
     </Sequence.Variables>
@@ -94,20 +96,20 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_browser]" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe STORE'" sap:VirtualizedContainerService.HintSize="586,2596" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="241f251b610e74c47bc12c71490f270a" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe STORE'" sap:VirtualizedContainerService.HintSize="654,3044" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="241f251b610e74c47bc12c71490f270a" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="552,2426" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="620,2874" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Navigating to the cart&quot;]" />
-            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DelayBefore="300" DelayMS="400" DisplayName="Click 'A  cartur'" sap:VirtualizedContainerService.HintSize="518,139" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Navigating to the cart&quot;]" />
+            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DelayBefore="300" DelayMS="400" DisplayName="Click 'A  cartur'" sap:VirtualizedContainerService.HintSize="586,139" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -126,75 +128,88 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,175" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Click suscesull&quot;]" />
-            <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="518,123" sap2010:WorkflowViewState.IdRef="Delay_2" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Verifying items in cart&quot;]" />
-            <ui:UiElementExists DisplayName="Element Exists 'A  #'" Exists="[bool_ItemExists]" sap:VirtualizedContainerService.HintSize="518,139" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,175" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Click suscesull&quot;]" />
+            <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="586,123" sap2010:WorkflowViewState.IdRef="Delay_2" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Verifying items in cart&quot;]" />
+            <ui:UiElementExists DisplayName="Element Exists 'A  #'" Exists="[bool_ItemExists]" sap:VirtualizedContainerService.HintSize="586,139" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
               <ui:UiElementExists.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c37c63ca-8eba-4304-bcfb-070a736340ec" InformativeScreenshot="9267caf868686768e3114b00b677004d" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;&lt;webctrl aaname='Delete' tag='A' /&gt;" TimeoutMS="200">
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c37c63ca-8eba-4304-bcfb-070a736340ec" InformativeScreenshot="9267caf868686768e3114b00b677004d" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;&lt;webctrl aaname='Delete' tag='A' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Items verified&quot;]" />
-            <If Condition="[bool_ItemExists]" sap:VirtualizedContainerService.HintSize="518,1265" sap2010:WorkflowViewState.IdRef="If_1">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Items verified&quot;]" />
+            <If Condition="[bool_ItemExists]" sap:VirtualizedContainerService.HintSize="586,1713" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484,877" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="552,1325" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;starting to remove the existing elements in the cart&quot;]" />
-                  <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="450,476" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;starting to remove the existing elements in the cart&quot;]" />
+                  <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="518,924" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
                     <ui:InterruptibleWhile.Body>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,329" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="484,777" sap2010:WorkflowViewState.IdRef="Sequence_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="200" DisplayName="Click 'A  #'" sap:VirtualizedContainerService.HintSize="382,139" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
-                          <ui:Click.CursorPosition>
-                            <ui:CursorPosition Position="Center">
-                              <ui:CursorPosition.OffsetX>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:CursorPosition.OffsetX>
-                              <ui:CursorPosition.OffsetY>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:CursorPosition.OffsetY>
-                            </ui:CursorPosition>
-                          </ui:Click.CursorPosition>
-                          <ui:Click.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4d1f84da-76b1-4d10-ac90-e638aa5b4fca" InformativeScreenshot="9267caf868686768e3114b00b677004d" Selector="&lt;webctrl aaname='Delete' tag='A' /&gt;" WaitForReady="COMPLETE">
-                              <ui:Target.TimeoutMS>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:Target.TimeoutMS>
-                            </ui:Target>
-                          </ui:Click.Target>
-                        </ui:Click>
-                        <ui:UiElementExists DisplayName="Element Exists 'A  #'" Exists="[bool_ItemExists]" sap:VirtualizedContainerService.HintSize="382,130" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                        <ui:UiElementExists DisplayName="Element Exists 'A  #'" Exists="[bool_ItemExists]" sap:VirtualizedContainerService.HintSize="450,139" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                           <ui:UiElementExists.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9112f68d-0158-41ec-81a9-858999f14196" InformativeScreenshot="9267caf868686768e3114b00b677004d" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;&lt;webctrl aaname='Delete' tag='A' /&gt;" WaitForReady="COMPLETE">
-                              <ui:Target.TimeoutMS>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:Target.TimeoutMS>
-                            </ui:Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9112f68d-0158-41ec-81a9-858999f14196" InformativeScreenshot="9267caf868686768e3114b00b677004d" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;&lt;webctrl aaname='Delete' tag='A' /&gt;" TimeoutMS="7000" WaitForReady="COMPLETE" />
                           </ui:UiElementExists.Target>
                         </ui:UiElementExists>
+                        <If Condition="[bool_ItemExists]" sap:VirtualizedContainerService.HintSize="450,578" sap2010:WorkflowViewState.IdRef="If_2">
+                          <If.Then>
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click 'A  #'" sap:VirtualizedContainerService.HintSize="382,130" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                                <ui:Click.CursorPosition>
+                                  <ui:CursorPosition Position="Center">
+                                    <ui:CursorPosition.OffsetX>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetX>
+                                    <ui:CursorPosition.OffsetY>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetY>
+                                  </ui:CursorPosition>
+                                </ui:Click.CursorPosition>
+                                <ui:Click.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4d1f84da-76b1-4d10-ac90-e638aa5b4fca" InformativeScreenshot="9267caf868686768e3114b00b677004d" Selector="&lt;webctrl aaname='Delete' tag='A' /&gt;" WaitForReady="COMPLETE">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                  </ui:Target>
+                                </ui:Click.Target>
+                              </ui:Click>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,166" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Warn" Message="[&quot;All items were removed&quot;]" />
+                            </Sequence>
+                          </If.Else>
+                        </If>
                       </Sequence>
                     </ui:InterruptibleWhile.Body>
                     <ui:InterruptibleWhile.Condition>
                       <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="bool_ItemExists" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
                     </ui:InterruptibleWhile.Condition>
                   </ui:InterruptibleWhile>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;All items were removed&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;All items were removed&quot;]" />
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="484,226" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="552,226" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
