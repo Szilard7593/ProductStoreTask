@@ -47,6 +47,7 @@
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -101,9 +102,10 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AddToCart" sap:VirtualizedContainerService.HintSize="744,2789" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AddToCart" sap:VirtualizedContainerService.HintSize="806,2995" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="bool_itemFound" />
     </Sequence.Variables>
@@ -112,13 +114,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser - DemoBlaze" sap:VirtualizedContainerService.HintSize="638,2766" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="8825be9124736784da11010da8320786" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser - DemoBlaze" sap:VirtualizedContainerService.HintSize="638,2972" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="8825be9124736784da11010da8320786" Selector="&lt;html app='msedge.exe' title='STORE' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="604,2596" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="604,2802" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="productDescription" />
               <Variable x:TypeArguments="x:String" Name="productPrice" />
@@ -217,95 +219,58 @@
                 <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="Not bool_itemFound" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
               </ui:InterruptibleDoWhile.Condition>
             </ui:InterruptibleDoWhile>
-            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text – Product name" sap:VirtualizedContainerService.HintSize="570,139" sap2010:WorkflowViewState.IdRef="GetValue_1">
+            <ui:LogMessage DisplayName="Log Message – Sending Hot Key" sap:VirtualizedContainerService.HintSize="570,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Sending hot key&quot;]" />
+            <ui:SendHotkey DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="3000" DelayMS="3000" DisplayName="Send Hotkey – Confirm Alert" sap:VirtualizedContainerService.HintSize="570,187" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a7320780-d091-4870-9a61-1a06394e89a5" InformativeScreenshot="0401467d511f6be6774b899b25fef8bd" Selector="&lt;webctrl css-selector='body&amp;gt;div' tag='DIV' idx='5' /&gt;" TimeoutMS="3000" WaitForReady="COMPLETE" />
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Product name from cart" sap:VirtualizedContainerService.HintSize="570,139" sap2010:WorkflowViewState.IdRef="GetValue_4">
               <ui:GetValue.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="892c9050-f903-4927-a246-a7a1c06e7e69" InformativeScreenshot="bee47047b1733d9b0c41eb05f3174fe2" Selector="&lt;webctrl tag='H2' aaname='*' class='name' visibleinnertext='*' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="143dd248-2b47-4f7b-9bca-ba35ac4795de" InformativeScreenshot="87e40858aaf53cd73ed63639b3c9a9bc" Selector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableRow='2' tag='TD' aaname='*' visibleinnertext='*' /&gt;" WaitForReady="COMPLETE">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
                 </ui:Target>
               </ui:GetValue.Target>
               <ui:GetValue.Value>
                 <OutArgument x:TypeArguments="x:String">[productName]</OutArgument>
               </ui:GetValue.Value>
             </ui:GetValue>
-            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text – Product Price" sap:VirtualizedContainerService.HintSize="570,139" sap2010:WorkflowViewState.IdRef="GetValue_2">
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Product price from cart" sap:VirtualizedContainerService.HintSize="570,139" sap2010:WorkflowViewState.IdRef="GetValue_5">
               <ui:GetValue.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0246f8d9-89a5-420c-b194-9abcaf0d564f" InformativeScreenshot="75096ac59c26d8360f50cf3d1449364e" Selector="&lt;webctrl tag='H3' aaname='$*' class='price-container' visibleinnertext='$* *includes tax' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="68a2d2b0-1af5-4b57-be6d-792538a2e676" InformativeScreenshot="8e40306412808e3421210ba258188562" Selector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableCol='3' tableRow='2' tag='TD' colName='Price' visibleinnertext='*' /&gt;" WaitForReady="COMPLETE">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
                 </ui:Target>
               </ui:GetValue.Target>
               <ui:GetValue.Value>
                 <OutArgument x:TypeArguments="x:String">[productPrice]</OutArgument>
               </ui:GetValue.Value>
             </ui:GetValue>
-            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text – Product Description" sap:VirtualizedContainerService.HintSize="570,139" sap2010:WorkflowViewState.IdRef="GetValue_3">
-              <ui:GetValue.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="99048c35-f5b3-4363-b49d-c83b080d6ef2" InformativeScreenshot="d39159366ff4fd5702df17441c27eb00" Selector="&lt;webctrl parentid='more-information' tag='P' aaname='*' visibleinnertext='*' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:GetValue.Target>
-              <ui:GetValue.Value>
-                <OutArgument x:TypeArguments="x:String">[productDescription]</OutArgument>
-              </ui:GetValue.Value>
-            </ui:GetValue>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click – Add To Cart Button" sap:VirtualizedContainerService.HintSize="570,139" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
-              <ui:Click.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:Click.CursorPosition>
-              <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9b1b0826-091a-40ba-9ee5-98273d6a3c1b" InformativeScreenshot="dd155e8138236d42e1e49f0c4c3ae1b8" Selector="&lt;webctrl parentid='tbodyid' tag='A' /&gt;" WaitForReady="COMPLETE">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                </ui:Target>
-              </ui:Click.Target>
-            </ui:Click>
-            <ui:LogMessage DisplayName="Log Message – Sending Hot Key" sap:VirtualizedContainerService.HintSize="570,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Sending hot key&quot;]" />
-            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DelayBefore="3000" DelayMS="3000" DisplayName="Send Hotkey – Confirm Alert" sap:VirtualizedContainerService.HintSize="570,187" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
-              <ui:SendHotkey.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a7320780-d091-4870-9a61-1a06394e89a5" InformativeScreenshot="0401467d511f6be6774b899b25fef8bd" Selector="&lt;webctrl css-selector='body&amp;gt;div' tag='DIV' idx='5' /&gt;" TimeoutMS="3000" WaitForReady="COMPLETE" />
-              </ui:SendHotkey.Target>
-            </ui:SendHotkey>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click – Cart Button" sap:VirtualizedContainerService.HintSize="570,130" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
-              <ui:Click.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:Click.CursorPosition>
-              <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3733fbe9-e66c-4a07-9f71-d5c8317b2672" InformativeScreenshot="bdb939e9741558983069fefb694e43bc" Selector="&lt;webctrl id='cartur' tag='A' /&gt;" WaitForReady="COMPLETE">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                </ui:Target>
-              </ui:Click.Target>
-            </ui:Click>
+            <If Condition="[in_targetItem.Equals(productName) and in_targetPrice = CInt(productPrice)]" sap:VirtualizedContainerService.HintSize="570,614" sap2010:WorkflowViewState.IdRef="If_4">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message - Correct Item" sap:VirtualizedContainerService.HintSize="382,166" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;The correct item was verified&quot;]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else - Other item" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,166" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Warn" Message="[&quot;The item is not the supposed one&quot;]" />
+                </Sequence>
+              </If.Else>
+            </If>
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>
