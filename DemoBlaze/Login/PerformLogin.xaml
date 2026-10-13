@@ -142,7 +142,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="1414,2655" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While - User Not logged In" sap:VirtualizedContainerService.HintSize="1414,2655" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1380,2508" sap2010:WorkflowViewState.IdRef="Sequence_32">
                   <Sequence.Variables>
@@ -153,7 +153,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:UiElementExists DisplayName="Element Exists 'A  prod.html?idp_=1'" Exists="[pageLoaded]" sap:VirtualizedContainerService.HintSize="1346,139" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                  <ui:UiElementExists DisplayName="Element Exists - Page loaded" Exists="[pageLoaded]" sap:VirtualizedContainerService.HintSize="1346,139" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
                     <ui:UiElementExists.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d8fc8cc3-5556-46e6-8d7d-a8b96ffd0f0d" InformativeScreenshot="53d0aa99afa38730315b1037a4bef9f1" Selector="&lt;webctrl class='hrefch' parentid='tbodyid' tag='A' /&gt;" WaitForReady="COMPLETE">
                         <ui:Target.TimeoutMS>
@@ -162,7 +162,7 @@
                       </ui:Target>
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[pageLoaded]" sap:VirtualizedContainerService.HintSize="1346,2309" sap2010:WorkflowViewState.IdRef="If_9">
+                  <If Condition="[pageLoaded]" DisplayName="If - Page loaded" sap:VirtualizedContainerService.HintSize="1346,2309" sap2010:WorkflowViewState.IdRef="If_9">
                     <If.Then>
                       <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1312,1973" sap2010:WorkflowViewState.IdRef="Sequence_48">
                         <sap:WorkflowViewStateService.ViewState>
